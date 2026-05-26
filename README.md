@@ -56,7 +56,7 @@ The MrWest Cybersecurity Bot is a WPF GUI application that raises cybersecurity 
 
 ### Steps
 1. Clone the repository:
-2. 2. Open `CyberSecurityChatBot.csproj` in Visual Studio 2022
+2. Open `CyberSecurityChatBot.csproj` in Visual Studio 2022
 3. Place `greeting.wav` in the project root
 4. Set `greeting.wav` → Properties → Copy to Output Directory → **Copy Always**
 5. Press **F5** or click the Run button to launch
