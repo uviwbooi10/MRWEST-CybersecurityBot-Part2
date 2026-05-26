@@ -56,5 +56,50 @@ The MrWest Cybersecurity Bot is a WPF GUI application that raises cybersecurity 
 
 ### Steps
 1. Clone the repository:
+2. 2. Open `CyberSecurityChatBot.csproj` in Visual Studio 2022
+3. Place `greeting.wav` in the project root
+4. Set `greeting.wav` → Properties → Copy to Output Directory → **Copy Always**
+5. Press **F5** or click the Run button to launch
+
+---
+
+## 🎤 Voice Greeting
+
+Place your `greeting.wav` file in the project root folder. The app will automatically play it on startup. The file is configured to copy to the output directory on every build.
+
+---
+
+## 🔁 CI/CD
+
+GitHub Actions automatically builds the project on every push to `main` using `windows-latest` for WPF compatibility.
+
+![CI Status](https://github.com/uviwbooi10/MRWEST-CybersecurityBot-Part2/actions/workflows/dotnet.yml/badge.svg)
+
+---
+
+## 📹 Video Presentation
+
+🎬 YouTube Link: **[ADD YOUR YOUTUBE LINK HERE]**
+
+---
+
+## 📸 Screenshots
+
+### App Running
+![<img width="1919" height="1079" alt="Screenshot 2026-05-26 214948" src="https://github.com/user-attachments/assets/db08979d-ceb0-43db-96c1-69969d6e86e0" />
+](https://github.com/user-attachments/assets/ADD-YOUR-SCREENSHOT-HERE)
+
+### GitHub Actions Green Tick
+![<img width="1915" height="1029" alt="image" src="https://github.com/user-attachments/assets/8c2f0caa-6458-4441-bcab-2f0dfc49ea36" />
+](https://github.com/user-attachments/assets/ADD-YOUR-CI-SCREENSHOT-HERE)
+
+---
+
+## 📚 References
+
+- Microsoft Docs – [WPF Overview](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/)
+- Microsoft Docs – [SoundPlayer](https://learn.microsoft.com/en-us/dotnet/api/system.media.soundplayer)
+- SABRIC – [South African Banking Risk Information Centre](https://www.sabric.co.za)
+- POPIA – [Protection of Personal Information Act](https://popia.co.za)
 
 ## 🗂️ Project Structure
