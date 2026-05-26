@@ -1,4 +1,4 @@
-# 🔐 MrWest Cybersecurity Bot — Part 2
+#  MrWest Cybersecurity Bot — Part 2
 
 **PROG6221 – Portfolio of Evidence – Part 2**  
 **Student:** Uviwe Booi  
@@ -7,27 +7,27 @@
 
 ---
 
-## 📋 Overview
+##  Overview
 
 The MrWest Cybersecurity Bot is a WPF GUI application that raises cybersecurity awareness. The bot greets users with a voice message and ASCII art logo, asks for their name, and answers cybersecurity questions in an interactive chat interface. Part 2 adds keyword recognition, random responses, sentiment detection, memory and recall, and conversation flow.
 
 ---
 
-## ✅ Features
+##  Features
 
-- 🎤 **Voice Greeting** – Plays `greeting.wav` on startup
-- 🎨 **ASCII Art Logo** – MrWest themed banner in the GUI header
-- 👤 **User Memory** – Remembers your name and favourite topic
-- 🤖 **Keyword Recognition** – 13 cybersecurity topics with targeted responses
-- 🎲 **Random Responses** – Multiple responses per topic, randomly selected
-- 💬 **Conversation Flow** – Type 'tell me more' to continue any topic
-- 🧠 **Sentiment Detection** – Detects worried, curious, frustrated, happy
-- 🛡️ **Error Handling** – Handles empty and unknown input gracefully
-- 💻 **Dark Cybersecurity GUI** – Clean WPF interface with green accent colours
+-  **Voice Greeting** – Plays `greeting.wav` on startup
+-  **ASCII Art Logo** – MrWest themed banner in the GUI header
+-  **User Memory** – Remembers your name and favourite topic
+-  **Keyword Recognition** – 13 cybersecurity topics with targeted responses
+-  **Random Responses** – Multiple responses per topic, randomly selected
+-  **Conversation Flow** – Type 'tell me more' to continue any topic
+-  **Sentiment Detection** – Detects worried, curious, frustrated, happy
+-  **Error Handling** – Handles empty and unknown input gracefully
+-  **Dark Cybersecurity GUI** – Clean WPF interface with green accent colours
 
 ---
 
-## 💬 Supported Keywords
+##  Supported Keywords
 
 | Keyword | Example input |
 |---------|--------------|
@@ -47,7 +47,7 @@ The MrWest Cybersecurity Bot is a WPF GUI application that raises cybersecurity 
 
 ---
 
-## 🚀 How to Run
+##  How to Run
 
 ### Prerequisites
 - Visual Studio 2022
@@ -63,13 +63,13 @@ The MrWest Cybersecurity Bot is a WPF GUI application that raises cybersecurity 
 
 ---
 
-## 🎤 Voice Greeting
+##  Voice Greeting
 
 Place your `greeting.wav` file in the project root folder. The app will automatically play it on startup. The file is configured to copy to the output directory on every build.
 
 ---
 
-## 🔁 CI/CD
+##  CI/CD
 
 GitHub Actions automatically builds the project on every push to `main` using `windows-latest` for WPF compatibility.
 
@@ -77,16 +77,17 @@ GitHub Actions automatically builds the project on every push to `main` using `w
 
 ---
 
-## 📹 Video Presentation
+##  Video Presentation
 
-🎬 YouTube Link: **[ADD YOUR YOUTUBE LINK HERE]**
+ YouTube Link: **[ADD YOUR YOUTUBE LINK HERE]**
 
 ---
 
-## 📸 Screenshots
+##  Screenshots
 
 ### App Running
-https://github.com/uviwbooi10/MRWEST-CybersecurityBot-Part2/blob/main/Screenshot%202026-05-26%20214948.png?raw=true
+<img width="1919" height="1079" alt="Screenshot 2026-05-26 214948" src="https://github.com/user-attachments/assets/edc815c0-8a6b-4aa1-9640-7d2b424b39f6" />
+
 
 ### GitHub Actions Green Tick
 <img width="1915" height="1029" alt="Screenshot 2026-05-26 215553" src="https://github.com/user-attachments/assets/3873cda0-6d95-49d7-b5d1-96984cc83e17" />
@@ -94,11 +95,26 @@ https://github.com/uviwbooi10/MRWEST-CybersecurityBot-Part2/blob/main/Screenshot
 
 ---
 
-## 📚 References
+##  References
 
 - Microsoft Docs – [WPF Overview](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/)
 - Microsoft Docs – [SoundPlayer](https://learn.microsoft.com/en-us/dotnet/api/system.media.soundplayer)
 - SABRIC – [South African Banking Risk Information Centre](https://www.sabric.co.za)
 - POPIA – [Protection of Personal Information Act](https://popia.co.za)
 
-## 🗂️ Project Structure
+##  Project Structure
+MRWEST-CybersecurityBot-Part2/
+├── App.xaml
+├── App.xaml.cs
+├── MainWindow.xaml          → GUI layout
+├── MainWindow.xaml.cs       → UI event handlers
+├── ChatBot.cs               → Central routing logic
+├── KeywordResponder.cs      → Keyword dictionary and responses
+├── SentimentDetector.cs     → Sentiment detection logic
+├── MemoryStore.cs           → User memory and recall
+├── greeting.wav             → Voice greeting audio
+├── CyberSecurityChatBot.csproj
+├── README.md
+└── .github/
+└── workflows/
+└── dotnet.yml       → GitHub Actions CI
