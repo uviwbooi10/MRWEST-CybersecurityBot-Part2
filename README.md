@@ -86,12 +86,11 @@ GitHub Actions automatically builds the project on every push to `main` using `w
 ## 📸 Screenshots
 
 ### App Running
-![<img width="1919" height="1079" alt="Screenshot 2026-05-26 214948" src="https://github.com/user-attachments/assets/db08979d-ceb0-43db-96c1-69969d6e86e0" />
-](https://github.com/user-attachments/assets/ADD-YOUR-SCREENSHOT-HERE)
+https://github.com/uviwbooi10/MRWEST-CybersecurityBot-Part2/blob/main/Screenshot%202026-05-26%20214948.png?raw=true
 
 ### GitHub Actions Green Tick
-![<img width="1915" height="1029" alt="image" src="https://github.com/user-attachments/assets/8c2f0caa-6458-4441-bcab-2f0dfc49ea36" />
-](https://github.com/user-attachments/assets/ADD-YOUR-CI-SCREENSHOT-HERE)
+<img width="1915" height="1029" alt="Screenshot 2026-05-26 215553" src="https://github.com/user-attachments/assets/3873cda0-6d95-49d7-b5d1-96984cc83e17" />
+
 
 ---
 
