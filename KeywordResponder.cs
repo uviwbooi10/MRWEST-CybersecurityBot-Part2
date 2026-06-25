@@ -1,18 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
-namespace PART2
+namespace THEPART2
 {
     /// <summary>
     /// Manages cybersecurity keyword recognition.
     /// Each keyword maps to a list of responses — one is picked randomly
-    /// to keep the conversation varied and engaging.
+    /// to keep the conversation varied and engaging. Also normalises
+    /// common synonyms so varied phrasing still matches (NLP support).
     /// </summary>
     public class KeywordResponder
     {
         private readonly Dictionary<string, List<string>> _responses;
         private readonly Random _random = new();
+
+        private readonly Dictionary<string, string> _synonyms = new()
+        {
+            ["pw"] = "password",
+            ["passcode"] = "password",
+            ["pass word"] = "password",
+            ["phish"] = "phishing",
+            ["scammed"] = "scam",
+            ["scamming"] = "scam",
+            ["virus"] = "malware",
+            ["trojan"] = "malware",
+            ["spyware"] = "malware",
+            ["2fa"] = "two-factor",
+            ["mfa"] = "two-factor",
+            ["multi-factor"] = "two-factor",
+            ["personal info"] = "privacy",
+            ["personal data"] = "privacy",
+            ["leaked"] = "data breach",
+            ["hacked"] = "data breach",
+            ["breach"] = "data breach",
+            ["encrypted"] = "encryption",
+            ["lock my files"] = "ransomware",
+            ["safe browsing"] = "browsing",
+            ["public wifi"] = "browsing"
+        };
 
         public KeywordResponder()
         {
@@ -137,14 +164,26 @@ namespace PART2
             };
         }
 
+        /// <summary>Normalises common synonyms to their matching keyword before lookup.</summary>
+        private string NormaliseSynonyms(string input)
+        {
+            string result = input;
+            foreach (var pair in _synonyms)
+            {
+                if (result.Contains(pair.Key))
+                    result = result.Replace(pair.Key, pair.Value);
+            }
+            return result;
+        }
+
         /// <summary>
-        /// Checks if the user input contains any known keyword.
-        /// Returns a randomly selected response from that keyword's list.
-        /// Returns null if no keyword is found.
+        /// Checks if the user input contains any known keyword (after synonym
+        /// normalisation). Returns a randomly selected response from that
+        /// keyword's list. Returns null if no keyword is found.
         /// </summary>
         public string? GetResponse(string input)
         {
-            string lower = input.ToLower();
+            string lower = NormaliseSynonyms(input.ToLower());
             foreach (var pair in _responses)
             {
                 if (lower.Contains(pair.Key))
@@ -156,10 +195,10 @@ namespace PART2
             return null;
         }
 
-        /// <summary>Returns the matched keyword from the input, or null.</summary>
+        /// <summary>Returns the matched keyword from the input (after synonym normalisation), or null.</summary>
         public string? GetMatchedKeyword(string input)
         {
-            string lower = input.ToLower();
+            string lower = NormaliseSynonyms(input.ToLower());
             foreach (string key in _responses.Keys)
             {
                 if (lower.Contains(key))
