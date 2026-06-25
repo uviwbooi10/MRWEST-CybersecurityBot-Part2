@@ -8,7 +8,7 @@ namespace THEPART2
     /// Represents a single cybersecurity task. Named CyberTask (not Task)
     /// to avoid conflict with System.Threading.Tasks.Task.
     /// </summary>
-    public class CyberTask
+    public class CyberTask 
     {
         public int Id { get; set; }
         public string Title { get; set; } = string.Empty;
