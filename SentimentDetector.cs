@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PART2
+namespace THEPART2
 {
     public enum Sentiment { Neutral, Worried, Curious, Frustrated, Happy }
 
