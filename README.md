@@ -1,75 +1,123 @@
-#  MrWest Cybersecurity Bot — Part 2
+# 🔐 MrWest Cybersecurity Bot — Part 1, 2 & 3 (Full POE)
 
-**PROG6221 – Portfolio of Evidence – Part 2**  
-**Student:** Uviwe Booi  
-**Student Number:** ST10491015  
-**Module:** Programming 2A  
-
----
-
-##  Overview
-
-The MrWest Cybersecurity Bot is a WPF GUI application that raises cybersecurity awareness. The bot greets users with a voice message and ASCII art logo, asks for their name, and answers cybersecurity questions in an interactive chat interface. Part 2 adds keyword recognition, random responses, sentiment detection, memory and recall, and conversation flow.
+**PROG6221 – Portfolio of Evidence – Final Submission**
+**Student:** Uviwe Booi
+**Student Number:** ST10491015
+**Module:** Programming 2A
 
 ---
 
-##  Features
+## 📋 Overview
 
--  **Voice Greeting** – Plays `greeting.wav` on startup
--  **ASCII Art Logo** – MrWest themed banner in the GUI header
--  **User Memory** – Remembers your name and favourite topic
--  **Keyword Recognition** – 13 cybersecurity topics with targeted responses
--  **Random Responses** – Multiple responses per topic, randomly selected
--  **Conversation Flow** – Type 'tell me more' to continue any topic
--  **Sentiment Detection** – Detects worried, curious, frustrated, happy
--  **Error Handling** – Handles empty and unknown input gracefully
--  **Dark Cybersecurity GUI** – Clean WPF interface with green accent colours
+The MrWest Cybersecurity Bot is a WPF GUI application that raises cybersecurity awareness through an interactive chatbot, a task assistant with JSON storage, a cybersecurity quiz mini-game, and an activity log. This repository contains the complete, combined submission for Parts 1, 2, and 3 of the POE.
 
 ---
 
-##  Supported Keywords
+## ✅ Features
 
-| Keyword | Example input |
-|---------|--------------|
-| password | tell me about passwords |
-| phishing | what is phishing |
-| malware | how does malware work |
-| privacy | how do I protect my privacy |
-| scam | what is a scam |
-| vpn | what is a vpn |
-| firewall | tell me about firewalls |
-| two-factor | what is 2fa |
-| social engineering | what is social engineering |
-| encryption | tell me about encryption |
-| data breach | what is a data breach |
-| ransomware | tell me about ransomware |
-| browsing | safe browsing tips |
+### Part 1 — Console Foundations (carried into GUI)
+- 🎤 Voice greeting on startup (`SoundPlayer`)
+- 🎨 ASCII art logo (MrWest themed)
+- 👤 Personalised name-based interaction
+
+### Part 2 — GUI, Keywords, Sentiment & Memory
+- 🤖 **Keyword Recognition** – 13+ cybersecurity topics with randomised responses
+- 🎲 **Random Responses** – multiple responses per topic
+- 💬 **Conversation Flow** – "tell me more" continues the current topic
+- 🧠 **Sentiment Detection** – worried, curious, frustrated, happy
+- 🗂️ **Memory & Recall** – remembers your name and favourite topic
+- 💻 Dark cybersecurity-themed WPF interface
+
+### Part 3 — Task Assistant, Quiz, NLP & Activity Log
+- ✅ **Task Assistant** – add, view, complete, and delete tasks with reminders, stored in `tasks.json`
+- 🎮 **Cybersecurity Quiz** – 14 questions across phishing, passwords, safe browsing, social engineering, 2FA, malware, privacy, and data backup, with immediate feedback and a final score
+- 🧩 **NLP Simulation** – detects task, reminder, quiz, and log intents from varied natural phrasing (e.g. "add task", "I need to", "remind me to")
+- 📜 **Activity Log** – timestamped record of every significant action, shows last 10 entries with a "show more" option
 
 ---
 
-##  How to Run
+## 🗂️ Project Structure
+
+```
+MRWEST-CybersecurityBot/
+├── App.xaml / App.xaml.cs
+├── MainWindow.xaml              → GUI layout (Chat, Tasks, Quiz tabs)
+├── MainWindow.xaml.cs           → UI event handlers
+├── ChatBot.cs                   → Central routing logic (NLP + Part 1/2 flow)
+├── KeywordResponder.cs          → Keyword dictionary, responses, synonym matching
+├── SentimentDetector.cs         → Sentiment detection logic
+├── MemoryStore.cs               → User memory and recall
+├── CyberTask.cs                 → Task model
+├── TaskStorageHelper.cs         → Reads/writes tasks.json (Newtonsoft.Json)
+├── TaskManager.cs               → Task business logic
+├── QuizQuestion.cs              → Quiz question model
+├── QuizManager.cs               → Quiz logic, scoring, feedback
+├── ActivityLogger.cs            → Logs all significant actions
+├── greeting.wav                 → Voice greeting audio
+├── tasks.json                   → Auto-created task storage (example included)
+├── CyberSecurityChatBot.csproj
+├── README.md
+└── .github/
+    └── workflows/
+        └── dotnet.yml           → GitHub Actions CI
+```
+
+---
+
+## 🚀 How to Run
 
 ### Prerequisites
 - Visual Studio 2022
 - .NET 8.0
 - Windows OS
+- Newtonsoft.Json NuGet package
 
-### Steps
+### Setup Steps
 1. Clone the repository:
-2. Open `CyberSecurityChatBot.csproj` in Visual Studio 2022
-3. Place `greeting.wav` in the project root
-4. Set `greeting.wav` → Properties → Copy to Output Directory → **Copy Always**
-5. Press **F5** or click the Run button to launch
+```
+git clone https://github.com/uviwbooi10/MRWEST-CybersecurityBot-Part2.git
+```
+2. Open the `.sln` file in Visual Studio 2022
+3. Install the Newtonsoft.Json NuGet package:
+   - Right-click the project in Solution Explorer
+   - Click **Manage NuGet Packages**
+   - Click the **Browse** tab
+   - Search `Newtonsoft.Json`
+   - Click **Install**
+4. Place `greeting.wav` in the project root if not already present
+5. Set `greeting.wav` → Properties → **Copy to Output Directory** → **Copy Always**
+6. Press **F5** to build and run
+
+> **Note:** `tasks.json` is created automatically the first time you add a task — no manual setup required. An example file with one task is included in this repo for reference.
 
 ---
 
-##  Voice Greeting
+## 💬 How to Use
 
-Place your `greeting.wav` file in the project root folder. The app will automatically play it on startup. The file is configured to copy to the output directory on every build.
+### Chat Tab
+- Type your name when prompted
+- Ask about cybersecurity topics: `passwords`, `phishing`, `malware`, `privacy`, `scam`, `vpn`, `firewall`, `2fa`, `encryption`, `ransomware`, `browsing`
+- Try: `I am worried about phishing` → sentiment detection + auto tip
+- Try: `tell me more` → continues the last topic
+- Try: `Add a task to enable two-factor authentication` → adds a task via NLP
+- Try: `Remind me to update my password tomorrow` → sets a reminder
+- Try: `start quiz` → launches the quiz from chat
+- Try: `show activity log` → view recent actions
+
+### Tasks Tab
+- Fill in title, description, and reminder → click **Add Task**
+- Select a task → **Mark Complete** or **Delete**
+- Tasks persist in `tasks.json` and reload automatically on restart
+
+### Quiz Tab
+- Click **Start Quiz**
+- Select an answer with the radio buttons → **Submit Answer**
+- Immediate feedback shown after each question
+- Final score and message displayed after question 14
 
 ---
 
-##  CI/CD
+## 🔁 CI/CD
 
 GitHub Actions automatically builds the project on every push to `main` using `windows-latest` for WPF compatibility.
 
@@ -77,43 +125,38 @@ GitHub Actions automatically builds the project on every push to `main` using `w
 
 ---
 
-##  Video Presentation
+## 🏷️ Releases
 
- YouTube Link: https://youtu.be/PTx9zPeZ5f0?si=mcIFEZ6_BUU_iq4U 
+| Tag | Description |
+|-----|-------------|
+| v2.0 | Part 2 initial release — WPF GUI, keyword recognition, voice greeting, ASCII art |
+| v2.1 | Part 2 full feature release — sentiment detection, memory, conversation flow |
+| v3.0 | Part 3 — Task Assistant with JSON storage |
+| v3.1 | Part 3 — Quiz mini-game and Activity Log |
+| v3.2 | Part 3 — Final release, full integration of Parts 1, 2 and 3 |
+
 ---
 
-##  Screenshots
+## 📹 Video Presentation
+
+🎬 YouTube Link: **[ADD YOUR PART 3 YOUTUBE LINK HERE]**
+
+---
+
+## 📸 Screenshots
 
 ### App Running
-<img width="1919" height="1079" alt="Screenshot 2026-05-26 214948" src="https://github.com/user-attachments/assets/edc815c0-8a6b-4aa1-9640-7d2b424b39f6" />
-
+![App Screenshot](ADD-SCREENSHOT-LINK-HERE)
 
 ### GitHub Actions Green Tick
-<img width="1915" height="1029" alt="Screenshot 2026-05-26 215553" src="https://github.com/user-attachments/assets/3873cda0-6d95-49d7-b5d1-96984cc83e17" />
-
+![CI Screenshot](ADD-CI-SCREENSHOT-LINK-HERE)
 
 ---
 
-##  References
+## 📚 References
 
 - Microsoft Docs – [WPF Overview](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/)
 - Microsoft Docs – [SoundPlayer](https://learn.microsoft.com/en-us/dotnet/api/system.media.soundplayer)
+- Newtonsoft.Json – [https://www.newtonsoft.com/json](https://www.newtonsoft.com/json)
 - SABRIC – [South African Banking Risk Information Centre](https://www.sabric.co.za)
 - POPIA – [Protection of Personal Information Act](https://popia.co.za)
-
-##  Project Structure
-MRWEST-CybersecurityBot-Part2/
-├── App.xaml
-├── App.xaml.cs
-├── MainWindow.xaml          → GUI layout
-├── MainWindow.xaml.cs       → UI event handlers
-├── ChatBot.cs               → Central routing logic
-├── KeywordResponder.cs      → Keyword dictionary and responses
-├── SentimentDetector.cs     → Sentiment detection logic
-├── MemoryStore.cs           → User memory and recall
-├── greeting.wav             → Voice greeting audio
-├── CyberSecurityChatBot.csproj
-├── README.md
-└── .github/
-└── workflows/
-└── dotnet.yml       → GitHub Actions CI
