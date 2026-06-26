@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PART2
+namespace THEPART2
 {
     /// <summary>
     /// Stores user details shared during the conversation
