@@ -123,8 +123,6 @@ GitHub Actions automatically builds the project on every push to `main` using `w
 
 ![CI Status](https://github.com/uviwbooi10/MRWEST-CybersecurityBot-Part2/actions/workflows/dotnet.yml/badge.svg)
 
-> **Note on CI history:** Earlier workflow runs in this repo's Actions tab show failures from before the Newtonsoft.Json NuGet package reference was added to the `.csproj` file. I identified the issue (missing package reference), fixed it, and pushed the correction. **The latest commit builds successfully with a green tick** — please refer to the most recent run in the Actions tab as the current build status.
-
 ---
 
 ##  Releases
