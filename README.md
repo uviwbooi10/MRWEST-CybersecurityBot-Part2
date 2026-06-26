@@ -146,13 +146,14 @@ GitHub Actions automatically builds the project on every push to `main` using `w
 ##  Screenshots
 
 ### App Running
-![App Screenshot](<img width="1918" height="1078" alt="Screenshot 2026-06-26 032418" src="https://github.com/user-attachments/assets/9983be40-3580-45f1-862c-55dc2e739d5d" />
-)
+![App Screenshot] <img width="1918" height="1078" alt="Screenshot 2026-06-26 032418" src="https://github.com/user-attachments/assets/9983be40-3580-45f1-862c-55dc2e739d5d" />
+
 
 ### GitHub Actions Green Tick
-![CI Screenshot](<img width="1918" height="975" alt="Screenshot 2026-06-26 033853" src="https://github.com/user-attachments/assets/62f51e2b-69b6-4fbd-af70-61284ef917c1" />
-)(<img width="1912" height="1022" alt="Screenshot 2026-06-26 033938" src="https://github.com/user-attachments/assets/e14d572b-e02f-47f6-bfb0-d8f466d74902" />
-)
+![CI Screenshot]<img width="1918" height="975" alt="Screenshot 2026-06-26 033853" src="https://github.com/user-attachments/assets/62f51e2b-69b6-4fbd-af70-61284ef917c1" />
+
+(<img width="1912" height="1022" alt="Screenshot 2026-06-26 033938" src="https://github.com/user-attachments/assets/e14d572b-e02f-47f6-bfb0-d8f466d74902" />
+
 
 
 ---
