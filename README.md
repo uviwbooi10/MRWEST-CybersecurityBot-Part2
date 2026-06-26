@@ -1,4 +1,4 @@
-# 🔐 MrWest Cybersecurity Bot — Part 1, 2 & 3 (Full POE)
+#  MrWest Cybersecurity Bot — Part 1, 2 & 3 (Full POE)
 
 **PROG6221 – Portfolio of Evidence – Final Submission**
 **Student:** Uviwe Booi
@@ -7,36 +7,36 @@
 
 ---
 
-## 📋 Overview
+##  Overview
 
 The MrWest Cybersecurity Bot is a WPF GUI application that raises cybersecurity awareness through an interactive chatbot, a task assistant with JSON storage, a cybersecurity quiz mini-game, and an activity log. This repository contains the complete, combined submission for Parts 1, 2, and 3 of the POE.
 
 ---
 
-## ✅ Features
+##  Features
 
 ### Part 1 — Console Foundations (carried into GUI)
-- 🎤 Voice greeting on startup (`SoundPlayer`)
-- 🎨 ASCII art logo (MrWest themed)
-- 👤 Personalised name-based interaction
+-  Voice greeting on startup (`SoundPlayer`)
+-  ASCII art logo (MrWest themed)
+-  Personalised name-based interaction
 
 ### Part 2 — GUI, Keywords, Sentiment & Memory
-- 🤖 **Keyword Recognition** – 13+ cybersecurity topics with randomised responses
-- 🎲 **Random Responses** – multiple responses per topic
-- 💬 **Conversation Flow** – "tell me more" continues the current topic
-- 🧠 **Sentiment Detection** – worried, curious, frustrated, happy
-- 🗂️ **Memory & Recall** – remembers your name and favourite topic
-- 💻 Dark cybersecurity-themed WPF interface
+-  **Keyword Recognition** – 13+ cybersecurity topics with randomised responses
+-  **Random Responses** – multiple responses per topic
+-  **Conversation Flow** – "tell me more" continues the current topic
+-  **Sentiment Detection** – worried, curious, frustrated, happy
+-  **Memory & Recall** – remembers your name and favourite topic
+-  Dark cybersecurity-themed WPF interface
 
 ### Part 3 — Task Assistant, Quiz, NLP & Activity Log
-- ✅ **Task Assistant** – add, view, complete, and delete tasks with reminders, stored in `tasks.json`
-- 🎮 **Cybersecurity Quiz** – 14 questions across phishing, passwords, safe browsing, social engineering, 2FA, malware, privacy, and data backup, with immediate feedback and a final score
-- 🧩 **NLP Simulation** – detects task, reminder, quiz, and log intents from varied natural phrasing (e.g. "add task", "I need to", "remind me to")
-- 📜 **Activity Log** – timestamped record of every significant action, shows last 10 entries with a "show more" option
+-  **Task Assistant** – add, view, complete, and delete tasks with reminders, stored in `tasks.json`
+-  **Cybersecurity Quiz** – 14 questions across phishing, passwords, safe browsing, social engineering, 2FA, malware, privacy, and data backup, with immediate feedback and a final score
+-  **NLP Simulation** – detects task, reminder, quiz, and log intents from varied natural phrasing (e.g. "add task", "I need to", "remind me to")
+-  **Activity Log** – timestamped record of every significant action, shows last 10 entries with a "show more" option
 
 ---
 
-## 🗂️ Project Structure
+##  Project Structure
 
 ```
 MRWEST-CybersecurityBot/
@@ -64,7 +64,7 @@ MRWEST-CybersecurityBot/
 
 ---
 
-## 🚀 How to Run
+##  How to Run
 
 ### Prerequisites
 - Visual Studio 2022
@@ -92,7 +92,7 @@ git clone https://github.com/uviwbooi10/MRWEST-CybersecurityBot-Part2.git
 
 ---
 
-## 💬 How to Use
+##  How to Use
 
 ### Chat Tab
 - Type your name when prompted
@@ -117,15 +117,17 @@ git clone https://github.com/uviwbooi10/MRWEST-CybersecurityBot-Part2.git
 
 ---
 
-## 🔁 CI/CD
+##  CI/CD
 
 GitHub Actions automatically builds the project on every push to `main` using `windows-latest` for WPF compatibility.
 
 ![CI Status](https://github.com/uviwbooi10/MRWEST-CybersecurityBot-Part2/actions/workflows/dotnet.yml/badge.svg)
 
+> **Note on CI history:** Earlier workflow runs in this repo's Actions tab show failures from before the Newtonsoft.Json NuGet package reference was added to the `.csproj` file. I identified the issue (missing package reference), fixed it, and pushed the correction. **The latest commit builds successfully with a green tick** — please refer to the most recent run in the Actions tab as the current build status.
+
 ---
 
-## 🏷️ Releases
+##  Releases
 
 | Tag | Description |
 |-----|-------------|
@@ -137,13 +139,13 @@ GitHub Actions automatically builds the project on every push to `main` using `w
 
 ---
 
-## 📹 Video Presentation
+##  Video Presentation
 
-🎬 YouTube Link: **[ADD YOUR PART 3 YOUTUBE LINK HERE]**
+ YouTube Link: **[ADD YOUR PART 3 YOUTUBE LINK HERE]**
 
 ---
 
-## 📸 Screenshots
+##  Screenshots
 
 ### App Running
 ![App Screenshot](ADD-SCREENSHOT-LINK-HERE)
@@ -153,7 +155,7 @@ GitHub Actions automatically builds the project on every push to `main` using `w
 
 ---
 
-## 📚 References
+##  References
 
 - Microsoft Docs – [WPF Overview](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/)
 - Microsoft Docs – [SoundPlayer](https://learn.microsoft.com/en-us/dotnet/api/system.media.soundplayer)
